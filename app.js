@@ -6,8 +6,8 @@ let textAreaMensagem = document.getElementById('textAreaMensagem');
 
 function criptografarTexto() {
 
-    if (/^[a-z][a-z\s]*$/.test(texto.value) === false) {
-        alert('Por favor, insira apenas letras minúsculas sem caracteres especiais, acentos e números.');
+    if (/^[a-z][a-z\s]*$/i.test(texto.value) === false) {
+        exibirMensagemTemporaria('Por favor, insira apenas letras sem caracteres especiais, acentos ou n\u00FAmeros.', 1400);
         texto.value = '';
         return;
     }
@@ -18,7 +18,7 @@ function criptografarTexto() {
         'o': 'ober',
         'u': 'ufat',
     };
-
+    texto.value = texto.value.toLowerCase();
     textAreaMensagem.hidden = false;    
     textAreaMensagem.style.fontSize = '2rem';
     textAreaMensagem.textContent = texto.value.split('').map(char => substituicoes[char] || char).join('');
@@ -54,7 +54,7 @@ function copiarTexto() {
 
     navigator.clipboard.writeText(textAreaMensagem.textContent);
 
-    alert('Copiado para a area de transferencia')
+    exibirMensagemTemporaria('Copiado para a \u00E1rea de transfer\u00EAncia', 1400)
 
     window.getSelection().removeAllRanges();
 
@@ -66,6 +66,15 @@ function setBtnDescrip(ativadoDesabilitado) {
     btnDescrip.disabled = ativadoDesabilitado;
     btnCrip.disabled = !ativadoDesabilitado;
     texto.disabled = !ativadoDesabilitado;
+}
+
+function exibirMensagemTemporaria(mensagem) {
+    const mensagemFlutuante = document.getElementById('mensagem__temporaria');
+    mensagemFlutuante.style.display = 'block';
+    mensagemFlutuante.textContent = mensagem;
+    setTimeout(() => {
+        mensagemFlutuante.style.display = 'none';
+    }, 2500);
 }
 
 

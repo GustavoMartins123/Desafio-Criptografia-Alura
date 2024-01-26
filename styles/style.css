@@ -24,6 +24,28 @@ body {
     gap: var(--size-2rem5);
 }
 
+.conteudo__mensagemTemp {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.conteudo__mensagemTemp__msg {
+    font-family: var(--fonte-principal);
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 1.25rem;
+    border-radius: 0.25rem;
+    display: none;
+    z-index: 1000;
+    flex: 0 1 auto;
+}
+
+
 textarea {
     resize: none;
     font-size: var(--size-2rem);
@@ -84,7 +106,7 @@ textarea {
     .conteudo__container__resultado {
         background-color: #ffffff;
         border-radius: var(--size-2rem);
-        padding: 0 2rem 2rem 2rem;
+        padding: 1rem 2rem 2rem 2rem;
         text-align: center;
         width: 100%;
         font-size: 1rem;

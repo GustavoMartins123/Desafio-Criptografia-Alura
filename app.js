@@ -5,8 +5,9 @@ let nenhumaMensagem = document.getElementById('nenhumaMensagem');
 let textAreaMensagem = document.getElementById('textAreaMensagem');
 
 function criptografarTexto() {
-    if (/^[a-z][a-z\s]*$/i.test(texto.value) === false) {
-        alert('Por favor, insira apenas letras minúsculas sem caracteres especiais, acentos e numeros.');
+
+    if (/^[a-z][a-z\s]*$/.test(texto.value) === false) {
+        alert('Por favor, insira apenas letras minúsculas sem caracteres especiais, acentos e números.');
         texto.value = '';
         return;
     }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Decodificador</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="conteudo">
+        <header>
+            <img src="./assets/Logo.svg" alt="Logo">
+        </header>
+        <main class="conteudo__container">
+            <section class="conteudo__container__input">
+                <textarea class="conteudo__container__input__text" id="textArea" cols="50" rows="10" placeholder="Digite seu texto..."></textarea>
+                <span>
+                    <img src="./assets/bi_exclamation-circle-fill.svg">
+                    Apenas letras minúsculas e sem acento.
+                </span>
+                <div class="conteudo__container__input__botoes">
+                    <button onclick="criptografarTexto()" class="conteudo__container__input__botoes__criptografar" id="btnCrip">Criptografar</button>
+                    <button onclick="descriptografarTexto()" class="conteudo__container__input__botoes__criptografar" id="btnDescrip" disabled>Descriptografar</button>
+                </div>
+            </section>
+
+            <div class="conteudo__container__resultado" id="resultado">
+                <img class="conteudo__container__resultado__imagem" id="imagem" src="assets/imagem.svg" alt="Logo-resultado">
+                <div>
+                    <Strong id="nenhumaMensagem">Nenhuma mensagem encontrada</Strong>
+                    <p></p>
+                    <span id="mensagem">Digite um texto que você deseja criptografar ou descriptografar.</span>
+                </div>
+                <textarea id="textAreaMensagem" cols="20" rows="8" hidden disabled></textarea>
+                <button onclick="copiarTexto()" class="conteudo__container__resultado__copiar" id="btnCopy" hidden>Copiar</button>
+            </div>
+        </main>
+    </div>
+    <footer class="rodape">
+        <p>Desenvolvido por Gustavo</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>

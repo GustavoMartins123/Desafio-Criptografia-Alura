@@ -113,11 +113,10 @@ textarea {
     }
 
     .conteudo__container__resultado textarea{
-        margin: -2.5rem 0 2.5rem 0;
+        margin: -3rem 0 2rem 0;
     }
 
 .conteudo__container__resultado__copiar {
-    margin: 0.1rem 0 0 0;
     font-size: 1rem;
     color: #FFFFFF;
     background-color: #0A3871;
